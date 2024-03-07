@@ -48,3 +48,8 @@ record_list=list(records)
 df=pd.DataFrame(record_list)
 print(df.shape)
 print(df.head(2))
+
+if "_id" in df.columns.to_list():
+    df=df.drop(columns=["_id"],axis=1)
+
+print(df.head(2))
