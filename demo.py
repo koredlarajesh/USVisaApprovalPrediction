@@ -1,2 +1,10 @@
 from us_visa.logger import logging
-logging.info("welcome to our custom log")
+from us_visa.exception import USvisaException
+import sys
+from builtins import Exception as CustomException
+
+try:
+    a=1/"10"
+except Exception as e:
+    raise USvisaException(e,sys) from e
+
